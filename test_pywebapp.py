@@ -7,7 +7,7 @@ b = app.browser()
 
 def test_Default():
     b.open("/")
-    assert "A01024304" in b.get_text()
+    assert "Andrei Muresan A01024304" in b.get_text()
 
 
 def test_Api():
