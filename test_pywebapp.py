@@ -4,20 +4,24 @@ from pywebapp import app
 
 b = app.browser()
 
+
 def test_Default():
-    b.open('/')
-    assert 'COMP4964' in b.get_text()
+    b.open("/")
+    assert "A01024304" in b.get_text()
+
 
 def test_Api():
-    b.open('/api/v1/test')
-    assert 'test' in b.get_text()
+    b.open("/api/v1/test")
+    assert "test" in b.get_text()
+
 
 def test_ApiJson():
-    b.open('/api/v1/json')
+    b.open("/api/v1/json")
     result = json.loads(b.get_text())
-    assert result['api-version'] == 'v1'
+    assert result["api-version"] == "v1"
+
 
 def test_ApiWorker():
-    b.open('/api/v1/worker')
+    b.open("/api/v1/worker")
     result = json.loads(b.get_text())
-    assert 'worker-name' in result
+    assert "worker-name" in result
